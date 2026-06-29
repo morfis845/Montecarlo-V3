@@ -1,0 +1,124 @@
+MonteCarlo-V3/
+│
+├── manage.py
+├── requirements.txt
+├── README.md
+├── .env
+├── .gitignore
+│
+├── config/
+│ ├── **init**.py
+│ ├── settings.py
+│ ├── api.py
+│ └── logging.py
+│
+├── core/
+│ ├── **init**.py
+│ ├── database.py
+│ ├── data_manager.py
+│ ├── logger.py
+│ ├── cache.py
+│ └── exceptions.py
+│
+├── database/
+│ ├── **init**.py
+│ ├── create_database.py
+│ ├── schema.sql
+│ └── migrations/
+│
+├── extract/
+│ ├── **init**.py
+│ ├── leagues.py
+│ ├── teams.py
+│ ├── players.py
+│ ├── fixtures.py
+│ ├── statistics.py
+│ ├── lineups.py
+│ ├── injuries.py
+│ └── odds.py
+│
+├── transform/
+│ ├── **init**.py
+│ ├── fixtures.py
+│ ├── teams.py
+│ ├── players.py
+│ ├── statistics.py
+│ └── normalize.py
+│
+├── loaders/
+│ ├── **init**.py
+│ ├── duckdb_loader.py
+│ └── parquet_loader.py
+│
+├── features/
+│ ├── **init**.py
+│ ├── team_features.py
+│ ├── player_features.py
+│ ├── match_features.py
+│ ├── fatigue.py
+│ ├── rest_days.py
+│ ├── form.py
+│ └── injuries.py
+│
+├── models/
+│ ├── **init**.py
+│ ├── elo.py
+│ ├── attack.py
+│ ├── defense.py
+│ ├── corners.py
+│ ├── cards.py
+│ ├── player_rating.py
+│ └── coach_rating.py
+│
+├── simulation/
+│ ├── **init**.py
+│ ├── lambdas.py
+│ ├── montecarlo.py
+│ ├── poisson.py
+│ └── dixon_coles.py
+│
+├── betting/
+│ ├── **init**.py
+│ ├── markets.py
+│ ├── odds.py
+│ ├── ev.py
+│ └── engine.py
+│
+├── validation/
+│ ├── **init**.py
+│ ├── calibration.py
+│ ├── roi.py
+│ ├── brier.py
+│ ├── logloss.py
+│ └── benchmark.py
+│
+├── reports/
+│ ├── **init**.py
+│ ├── report.py
+│ ├── charts.py
+│ └── export.py
+│
+├── tools/
+│ ├── power_ranking.py
+│ ├── compare_teams.py
+│ ├── inspect_features.py
+│ └── data_quality.py
+│
+├── tests/
+│ ├── test_elo.py
+│ ├── test_attack.py
+│ ├── test_database.py
+│ └── test_simulation.py
+│
+├── docs/
+│ ├── architecture.md
+│ ├── database.md
+│ ├── api.md
+│ └── roadmap.md
+│
+└── data/
+├── raw/
+├── processed/
+├── features/
+├── exports/
+└── montecarlo_v3.duckdb

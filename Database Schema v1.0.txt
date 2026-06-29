@@ -1,0 +1,22 @@
+                    DIM_LEAGUE
+                         │
+                         │
+                 DIM_STADIUM
+                         │
+                         │
+DIM_REFEREE ───── FACT_FIXTURE ───── DIM_TEAM
+                         │               │
+                         │               │
+                FACT_TEAM_MATCH          │
+                         │               │
+                         └──────┐        │
+                                │        │
+                         FACT_LINEUP     │
+                                │        │
+                           DIM_PLAYER────┘
+                                │
+                                │
+                       FACT_PLAYER_MATCH
+                                │
+                                │
+                         FACT_INJURIES
