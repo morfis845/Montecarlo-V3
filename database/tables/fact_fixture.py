@@ -51,6 +51,29 @@ TABLE = TableDefinition(
             nullable=False
         ),
 
+        Column(
+            "status",
+            "VARCHAR"
+        ),
+
+        Column(
+            "status_short",
+            "VARCHAR"
+        ),
+
+        Column(
+            "elapsed",
+            "INTEGER"
+        ),
+
+        Column(
+            "extra_time",
+            "INTEGER"
+        ),
+        Column("stadium_id", "INTEGER"),
+
+        Column("referee_name", "VARCHAR"),
+
     ],
 
     foreign_keys=[
@@ -59,6 +82,11 @@ TABLE = TableDefinition(
             "league_id",
             "dim_league",
             "league_id"
+        ),
+        ForeignKey(
+            "stadium_id",
+            "dim_stadium",
+            "stadium_id"
         )
 
     ],
