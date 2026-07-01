@@ -79,9 +79,41 @@ TABLE = TableDefinition(
             "referee_name",
             "VARCHAR"
         ),
-        Column("home_team_id", "INTEGER"),
+        Column(
+            "home_team_id",
+            "INTEGER",
+            nullable=False
+        ),
 
-        Column("away_team_id", "INTEGER"),
+        Column(
+            "away_team_id",
+            "INTEGER",
+            nullable=False
+        ),
+        Column("home_goals", "INTEGER"),
+        Column("away_goals", "INTEGER"),
+
+        Column("ht_home_goals", "INTEGER"),
+        Column("ht_away_goals", "INTEGER"),
+
+        Column("ft_home_goals", "INTEGER"),
+        Column("ft_away_goals", "INTEGER"),
+
+        Column("et_home_goals", "INTEGER"),
+        Column("et_away_goals", "INTEGER"),
+
+        Column("pen_home_goals", "INTEGER"),
+        Column("pen_away_goals", "INTEGER"),
+
+        Column("winner", "VARCHAR"),
+
+        Column("result", "VARCHAR"),
+
+        Column("goal_difference", "INTEGER"),
+
+        Column("total_goals", "INTEGER"),
+
+        Column("btts", "BOOLEAN"),
 
     ],
 
