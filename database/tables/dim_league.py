@@ -40,7 +40,16 @@ TABLE = TableDefinition(
         Column(
             name="logo",
             data_type="VARCHAR"
-        )
+        ),
+        Column(
+            name="country_code",
+            data_type="VARCHAR"
+        ),
+
+        Column(
+            name="country_flag",
+            data_type="VARCHAR"
+        ),
 
     ],
 

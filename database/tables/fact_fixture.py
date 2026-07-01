@@ -80,16 +80,21 @@ TABLE = TableDefinition(
             data_type="TIMESTAMP",
             nullable=False,
             default="CURRENT_TIMESTAMP"
-        )
+        ),
+        Column(
+            name="season",
+            data_type="INTEGER",
+            nullable=False
+        ),
+
+        
 
     ],
 
     foreign_keys=[
 
         ForeignKey("league_id","dim_league","league_id"),
-
-        ForeignKey("season_id","dim_season","season_id"),
-
+        
         ForeignKey("home_team_id","dim_team","team_id"),
 
         ForeignKey("away_team_id","dim_team","team_id"),

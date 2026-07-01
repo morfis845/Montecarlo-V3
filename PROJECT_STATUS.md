@@ -1,6 +1,6 @@
 # Monte Carlo Football Simulator V3
 
-Current Version
+Version
 
 v3.0.0-alpha.1
 
@@ -10,44 +10,34 @@ Current Sprint
 
 Sprint 2
 
-Database Engine
-
 Status
 
-🟡 In Progress
+✅ Completed
 
 ---
 
 Overall Progress
 
-Architecture ██████████ 100%
+Architecture ██████████
 
-Project Structure ██████████ 100%
+Documentation ██████████
 
-ADR ██████████ 100%
+Database Engine ██████████
 
-Database Docs ██████████ 100%
+Extraction Engine ░░░░░░░░░░
 
-Database Engine ████████░░ 40%
+Transformation ░░░░░░░░░░
 
-✔ ADR
-✔ Architecture
-✔ Database Docs
-✔ Roadmap
-✔ Coding Standards
-⬜ schema.sql
-⬜ create_database.py
-⬜ DatabaseManager
-⬜ manage.py create-db
+Feature Engineering ░░░░░░░░░░
 
-Feature Engine ░░░░░░░░░░ 0%
+Simulation ░░░░░░░░░░
 
-Simulation ░░░░░░░░░░ 0%
+Validation ░░░░░░░░░░
 
-Validation ░░░░░░░░░░ 0%
+Reporting ░░░░░░░░░░
 
 ---
 
-Next Milestone
+Next Sprint
 
-DuckDB operational.
+Extraction Engine

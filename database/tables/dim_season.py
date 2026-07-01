@@ -14,22 +14,17 @@ TABLE = TableDefinition(
     columns=[
 
         Column(
-            name="season_id",
-            data_type="INTEGER",
-            primary_key=True,
-            nullable=False
-        ),
-
-        Column(
             name="league_id",
             data_type="INTEGER",
-            nullable=False
+            nullable=False,
+            primary_key=True
         ),
 
         Column(
             name="season",
             data_type="INTEGER",
-            nullable=False
+            nullable=False,
+            primary_key=True
         ),
 
         Column(
@@ -47,6 +42,41 @@ TABLE = TableDefinition(
             data_type="BOOLEAN",
             nullable=False,
             default="FALSE"
+        ),
+
+        # ===== Coverage =====
+
+        Column("coverage_events", "BOOLEAN"),
+
+        Column("coverage_lineups", "BOOLEAN"),
+
+        Column("coverage_fixture_statistics", "BOOLEAN"),
+
+        Column("coverage_player_statistics", "BOOLEAN"),
+
+        Column("coverage_standings", "BOOLEAN"),
+
+        Column("coverage_players", "BOOLEAN"),
+
+        Column("coverage_top_scorers", "BOOLEAN"),
+
+        Column("coverage_top_assists", "BOOLEAN"),
+
+        Column("coverage_top_cards", "BOOLEAN"),
+
+        Column("coverage_injuries", "BOOLEAN"),
+
+        Column("coverage_predictions", "BOOLEAN"),
+
+        Column("coverage_odds", "BOOLEAN"),
+
+        # ===== ETL =====
+
+        Column(
+            name="api_last_update",
+            data_type="TIMESTAMP",
+            nullable=False,
+            default="CURRENT_TIMESTAMP"
         )
 
     ],

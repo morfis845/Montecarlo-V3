@@ -24,7 +24,18 @@ TABLE = TableDefinition(
 
         Column("stadium_id","INTEGER"),
 
-        Column("coach_id","INTEGER")
+        Column("coach_id","INTEGER"),
+        
+        Column(
+
+            name="season",
+
+            data_type="INTEGER",
+
+            nullable=False
+
+        ),
+
 
     ],
 
@@ -32,8 +43,7 @@ TABLE = TableDefinition(
 
         ForeignKey("league_id","dim_league","league_id"),
 
-        ForeignKey("season_id","dim_season","season_id"),
-
+        
         ForeignKey("stadium_id","dim_stadium","stadium_id"),
 
         ForeignKey("coach_id","dim_coach","coach_id")

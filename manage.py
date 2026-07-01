@@ -72,3 +72,49 @@ elif args.command == "rebuild-db":
     ).validate()
 
     print("\nDatabase rebuilt successfully.")
+
+elif args.command == "download-leagues":
+
+    from pipeline.download_leagues import DownloadLeaguesPipeline
+
+    DownloadLeaguesPipeline().run()
+
+elif args.command == "count":
+
+    db = DatabaseManager()
+
+    table = input("Table: ")
+
+    rows = db.execute(
+
+        f"SELECT COUNT(*) FROM {table}"
+
+    ).fetchone()[0]
+
+    print(
+
+        f"\n{table}: {rows} rows"
+
+    )
+
+    db.close()
+
+elif args.command == "preview":
+
+    import pandas as pd
+
+    db = DatabaseManager()
+
+    table = input("Table: ")
+
+    df = db.execute(
+
+        f"SELECT * FROM {table} LIMIT 10"
+
+    ).fetchdf()
+
+    print()
+
+    print(df)
+
+    db.close()
