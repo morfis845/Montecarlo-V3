@@ -16,6 +16,10 @@ class FixtureTransformer:
 
             venue = fixture["venue"]
 
+            status = fixture["status"]
+
+            teams = item["teams"]
+
             records.append({
 
                 "fixture_id": fixture["id"],
@@ -42,6 +46,10 @@ class FixtureTransformer:
                 "stadium_id": venue["id"],
 
                 "referee_name": fixture["referee"],
+
+                "home_team_id": teams["home"]["id"],
+
+                "away_team_id": teams["away"]["id"],
 
             })
 

@@ -70,9 +70,18 @@ TABLE = TableDefinition(
             "extra_time",
             "INTEGER"
         ),
-        Column("stadium_id", "INTEGER"),
+        Column(
+            "stadium_id",
+            "INTEGER"
+        ),
 
-        Column("referee_name", "VARCHAR"),
+        Column(
+            "referee_name",
+            "VARCHAR"
+        ),
+        Column("home_team_id", "INTEGER"),
+
+        Column("away_team_id", "INTEGER"),
 
     ],
 
@@ -87,7 +96,18 @@ TABLE = TableDefinition(
             "stadium_id",
             "dim_stadium",
             "stadium_id"
-        )
+        ),
+        ForeignKey(
+            "home_team_id",
+            "dim_team",
+            "team_id"
+        ),
+
+        ForeignKey(
+            "away_team_id",
+            "dim_team",
+            "team_id"
+        ),
 
     ],
 
