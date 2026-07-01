@@ -1,9 +1,4 @@
-from database.table_definition import (
-    Column,
-    ForeignKey,
-    Index,
-    TableDefinition
-)
+from database.table_definition import *
 
 TABLE = TableDefinition(
 
@@ -14,94 +9,57 @@ TABLE = TableDefinition(
     columns=[
 
         Column(
-            name="fixture_id",
-            data_type="INTEGER",
+            "fixture_id",
+            "INTEGER",
             primary_key=True,
             nullable=False
         ),
 
         Column(
-            name="league_id",
-            data_type="INTEGER",
+            "league_id",
+            "INTEGER",
             nullable=False
         ),
 
         Column(
-            name="season_id",
-            data_type="INTEGER",
+            "season",
+            "INTEGER",
             nullable=False
         ),
 
         Column(
-            name="home_team_id",
-            data_type="INTEGER",
+            "date",
+            "TIMESTAMP",
             nullable=False
         ),
 
         Column(
-            name="away_team_id",
-            data_type="INTEGER",
+            "timestamp",
+            "BIGINT",
             nullable=False
         ),
 
         Column(
-            name="stadium_id",
-            data_type="INTEGER"
-        ),
-
-        Column(
-            name="referee_id",
-            data_type="INTEGER"
-        ),
-
-        Column(
-            name="fixture_date",
-            data_type="TIMESTAMP",
+            "timezone",
+            "VARCHAR",
             nullable=False
         ),
 
         Column(
-            name="round",
-            data_type="VARCHAR"
-        ),
-
-        Column(
-            name="status",
-            data_type="VARCHAR"
-        ),
-
-        Column(
-            name="elapsed",
-            data_type="INTEGER"
-        ),
-
-        Column(
-            name="created_at",
-            data_type="TIMESTAMP",
-            nullable=False,
-            default="CURRENT_TIMESTAMP"
-        ),
-        Column(
-            name="season",
-            data_type="INTEGER",
+            "round",
+            "VARCHAR",
             nullable=False
         ),
-
-        
 
     ],
 
     foreign_keys=[
 
-        ForeignKey("league_id","dim_league","league_id"),
-        
-        ForeignKey("home_team_id","dim_team","team_id"),
-
-        ForeignKey("away_team_id","dim_team","team_id"),
-
-        ForeignKey("stadium_id","dim_stadium","stadium_id"),
-
-        ForeignKey("referee_id","dim_referee","referee_id")
+        ForeignKey(
+            "league_id",
+            "dim_league",
+            "league_id"
+        )
 
     ],
 
@@ -109,17 +67,12 @@ TABLE = TableDefinition(
 
         Index(
             "idx_fixture_date",
-            ["fixture_date"]
+            ["date"]
         ),
 
         Index(
             "idx_fixture_league",
             ["league_id"]
-        ),
-
-        Index(
-            "idx_fixture_season",
-            ["season_id"]
         )
 
     ]

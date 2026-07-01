@@ -122,12 +122,23 @@ elif args.command == "preview":
     print(df)
 
     db.close()
-    
+
 elif args.command == "download-teams":
 
     from pipeline.download_teams import DownloadTeamsPipeline
 
     DownloadTeamsPipeline().run(
+
+        league_id=args.league,
+
+        season=args.season
+
+    )
+elif args.command == "download-fixtures":
+
+    from pipeline.download_fixtures import DownloadFixturesPipeline
+
+    DownloadFixturesPipeline().run(
 
         league_id=args.league,
 
