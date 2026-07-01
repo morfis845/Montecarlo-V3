@@ -7,13 +7,13 @@ MonteCarlo-V3/
 ├── .gitignore
 │
 ├── config/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── settings.py
 │ ├── api.py
 │ └── logging.py
 │
 ├── core/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── database.py
 │ ├── data_manager.py
 │ ├── logger.py
@@ -21,13 +21,28 @@ MonteCarlo-V3/
 │ └── exceptions.py
 │
 ├── database/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── create_database.py
-│ ├── schema.sql
-│ └── migrations/
-│
+│ ├── builder.py
+│ ├── registry.py
+│ ├── validator.py
+│ ├── table_definition.py
+│ ├── tables/
+│ │ ├── __init__.py
+│ │ ├── dim_league.py
+│ │ ├── dim_team.py
+│ │ ├── dim_player.py
+│ │ ├── dim_referee.py
+│ │ ├── dim_stadium.py
+│ │ ├── fact_fixture.py
+│ │ ├── fact_team_match.py
+│ │ ├── fact_player_match.py
+│ │ ├── fact_lineup.py
+│ │ ├──  fact_injuries.py
+│ └─└─── odds.py
+│  
 ├── extract/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── leagues.py
 │ ├── teams.py
 │ ├── players.py
@@ -38,7 +53,7 @@ MonteCarlo-V3/
 │ └── odds.py
 │
 ├── transform/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── fixtures.py
 │ ├── teams.py
 │ ├── players.py
@@ -46,12 +61,12 @@ MonteCarlo-V3/
 │ └── normalize.py
 │
 ├── loaders/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── duckdb_loader.py
 │ └── parquet_loader.py
 │
 ├── features/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── team_features.py
 │ ├── player_features.py
 │ ├── match_features.py
@@ -61,7 +76,7 @@ MonteCarlo-V3/
 │ └── injuries.py
 │
 ├── models/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── elo.py
 │ ├── attack.py
 │ ├── defense.py
@@ -71,21 +86,21 @@ MonteCarlo-V3/
 │ └── coach_rating.py
 │
 ├── simulation/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── lambdas.py
 │ ├── montecarlo.py
 │ ├── poisson.py
 │ └── dixon_coles.py
 │
 ├── betting/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── markets.py
 │ ├── odds.py
 │ ├── ev.py
 │ └── engine.py
 │
 ├── validation/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── calibration.py
 │ ├── roi.py
 │ ├── brier.py
@@ -93,7 +108,7 @@ MonteCarlo-V3/
 │ └── benchmark.py
 │
 ├── reports/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── report.py
 │ ├── charts.py
 │ └── export.py

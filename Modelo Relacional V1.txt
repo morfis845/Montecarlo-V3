@@ -1,0 +1,40 @@
+                         DIM_LEAGUE
+                             │
+                             │
+                     league_id (PK)
+                             │
+          ┌──────────────────┴──────────────────┐
+          │                                     │
+     DIM_TEAM                           FACT_FIXTURE
+          │                                     │
+     team_id (PK)                     fixture_id (PK)
+          │                                     │
+          │                             home_team_id (FK)
+          │                             away_team_id (FK)
+          │                             league_id (FK)
+          │                             referee_id (FK)
+          │                             stadium_id (FK)
+          │
+          │
+     DIM_PLAYER
+          │
+     player_id (PK)
+          │
+          │
+          ├───────────────┐
+          │               │
+          │               │
+FACT_PLAYER_MATCH   FACT_LINEUP
+          │               │
+          │               │
+          └───────────────┘
+
+FACT_TEAM_MATCH
+
+FACT_INJURIES
+
+FACT_ODDS
+
+DIM_REFEREE
+
+DIM_STADIUM
