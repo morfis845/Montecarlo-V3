@@ -11,6 +11,10 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("command")
 
+parser.add_argument("--league", type=int)
+
+parser.add_argument("--season", type=int)
+
 args = parser.parse_args()
 
 
@@ -118,3 +122,15 @@ elif args.command == "preview":
     print(df)
 
     db.close()
+    
+elif args.command == "download-teams":
+
+    from pipeline.download_teams import DownloadTeamsPipeline
+
+    DownloadTeamsPipeline().run(
+
+        league_id=args.league,
+
+        season=args.season
+
+    )

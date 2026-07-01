@@ -8,53 +8,25 @@ TABLE = TableDefinition(
 
     columns=[
 
-        Column("team_id","INTEGER",False,True),
+        Column("team_id", "INTEGER", primary_key=True, nullable=False),
 
-        Column("league_id","INTEGER",False),
+        Column("team_name", "VARCHAR", nullable=False),
 
-        Column("season_id","INTEGER",False),
+        Column("team_code", "VARCHAR"),
 
-        Column("team_name","VARCHAR",False),
+        Column("country", "VARCHAR"),
 
-        Column("country","VARCHAR"),
+        Column("founded", "INTEGER"),
 
-        Column("founded","INTEGER"),
+        Column("national", "BOOLEAN"),
 
-        Column("logo","VARCHAR"),
-
-        Column("stadium_id","INTEGER"),
-
-        Column("coach_id","INTEGER"),
-        
-        Column(
-
-            name="season",
-
-            data_type="INTEGER",
-
-            nullable=False
-
-        ),
-
+        Column("logo", "VARCHAR"),
 
     ],
 
-    foreign_keys=[
-
-        ForeignKey("league_id","dim_league","league_id"),
-
-        
-        ForeignKey("stadium_id","dim_stadium","stadium_id"),
-
-        ForeignKey("coach_id","dim_coach","coach_id")
-
-    ],
+    foreign_keys=[],
 
     indexes=[
-
-        Index("idx_team_name",["team_name"]),
-
-        Index("idx_team_league",["league_id"])
 
     ]
 

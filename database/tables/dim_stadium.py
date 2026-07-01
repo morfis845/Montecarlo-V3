@@ -8,15 +8,43 @@ TABLE = TableDefinition(
 
     columns=[
 
-        Column("stadium_id","INTEGER",False,True),
+        Column(
+            name="stadium_id",
+            data_type="INTEGER",
+            primary_key=True,
+            nullable=False
+        ),
 
-        Column("stadium_name","VARCHAR",False),
+        Column(
+            name="stadium_name",
+            data_type="VARCHAR",
+            nullable=False
+        ),
 
-        Column("city","VARCHAR"),
+        Column(
+            name="address",
+            data_type="VARCHAR"
+        ),
 
-        Column("country","VARCHAR"),
+        Column(
+            name="city",
+            data_type="VARCHAR"
+        ),
 
-        Column("capacity","INTEGER")
+        Column(
+            name="capacity",
+            data_type="INTEGER"
+        ),
+
+        Column(
+            name="surface",
+            data_type="VARCHAR"
+        ),
+
+        Column(
+            name="image",
+            data_type="VARCHAR"
+        ),
 
     ],
 
