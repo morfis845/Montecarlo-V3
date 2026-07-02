@@ -18,31 +18,18 @@ from database.tables import (
 TABLES = [
 
     dim_league.TABLE,
-
     dim_season.TABLE,
-
     dim_coach.TABLE,
-
     dim_referee.TABLE,
-
     dim_stadium.TABLE,
-
     dim_team.TABLE,
-
     dim_player.TABLE,
-
     fact_fixture.TABLE,
-
     fact_team_match.TABLE,
-
     fact_player_match.TABLE,
-
     fact_lineup.TABLE,
-
     fact_injuries.TABLE,
-
     fact_odds.TABLE,
-
-    system_metadata.TABLE
+    system_metadata.TABLE,
 
 ]

@@ -1,9 +1,4 @@
-from database.table_definition import (
-    Column,
-    ForeignKey,
-    Index,
-    TableDefinition
-)
+from database.table_definition import *
 
 TABLE = TableDefinition(
 
@@ -13,35 +8,45 @@ TABLE = TableDefinition(
 
     columns=[
 
-        Column("fixture_id","INTEGER",False,True),
+        Column("fixture_id", "INTEGER", nullable=False),
 
-        Column("team_id","INTEGER",False,True),
+        Column("team_id", "INTEGER", nullable=False),
 
-        Column("is_home","BOOLEAN",False),
+        Column("shots_on_goal", "INTEGER"),
 
-        Column("goals","INTEGER"),
+        Column("shots_off_goal", "INTEGER"),
 
-        Column("halftime_goals","INTEGER"),
+        Column("total_shots", "INTEGER"),
 
-        Column("shots","INTEGER"),
+        Column("blocked_shots", "INTEGER"),
 
-        Column("shots_on_target","INTEGER"),
+        Column("shots_inside_box", "INTEGER"),
 
-        Column("corners","INTEGER"),
+        Column("shots_outside_box", "INTEGER"),
 
-        Column("offsides","INTEGER"),
+        Column("fouls", "INTEGER"),
 
-        Column("fouls","INTEGER"),
+        Column("corner_kicks", "INTEGER"),
 
-        Column("yellow_cards","INTEGER"),
+        Column("offsides", "INTEGER"),
 
-        Column("red_cards","INTEGER"),
+        Column("ball_possession", "INTEGER"),
 
-        Column("possession","DOUBLE"),
+        Column("yellow_cards", "INTEGER"),
 
-        Column("formation","VARCHAR"),
+        Column("red_cards", "INTEGER"),
 
-        Column("created_at","TIMESTAMP",False,default="CURRENT_TIMESTAMP")
+        Column("goalkeeper_saves", "INTEGER"),
+
+        Column("total_passes", "INTEGER"),
+
+        Column("accurate_passes", "INTEGER"),
+
+        Column("pass_accuracy", "INTEGER"),
+
+        Column("expected_goals", "DOUBLE"),
+
+        Column("goals_prevented", "DOUBLE"),
 
     ],
 
@@ -64,12 +69,12 @@ TABLE = TableDefinition(
     indexes=[
 
         Index(
-            "idx_team_fixture",
+            "idx_team_match_fixture",
             ["fixture_id"]
         ),
 
         Index(
-            "idx_team",
+            "idx_team_match_team",
             ["team_id"]
         )
 

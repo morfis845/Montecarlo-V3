@@ -145,3 +145,20 @@ elif args.command == "download-fixtures":
         season=args.season
 
     )
+
+
+
+elif args.command == "download-statistics":
+
+    from pipeline.download_statistics import (
+        DownloadStatisticsPipeline
+    )
+
+    DownloadStatisticsPipeline().run()
+
+
+
+parser.add_argument(
+    "--fixture",
+    type=int
+)
