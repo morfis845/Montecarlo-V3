@@ -1,9 +1,4 @@
-from database.table_definition import (
-    Column,
-    ForeignKey,
-    Index,
-    TableDefinition
-)
+from database.table_definition import *
 
 TABLE = TableDefinition(
 
@@ -13,57 +8,118 @@ TABLE = TableDefinition(
 
     columns=[
 
-        Column("fixture_id","INTEGER",False,True),
+        Column("fixture_id", "INTEGER", nullable=False),
 
-        Column("player_id","INTEGER",False,True),
+        Column("team_id", "INTEGER", nullable=False),
 
-        Column("team_id","INTEGER",False),
+        Column("player_id", "INTEGER", nullable=False),
 
-        Column("minutes","INTEGER"),
+        Column("minutes", "INTEGER"),
 
-        Column("position","VARCHAR"),
+        Column("shirt_number", "INTEGER"),
 
-        Column("rating","DOUBLE"),
+        Column("position", "VARCHAR"),
 
-        Column("goals","INTEGER"),
+        Column("rating", "DOUBLE"),
 
-        Column("assists","INTEGER"),
+        Column("captain", "BOOLEAN"),
 
-        Column("shots","INTEGER"),
+        Column("substitute", "BOOLEAN"),
 
-        Column("shots_on_target","INTEGER"),
+        Column("offsides", "INTEGER"),
 
-        Column("passes","INTEGER"),
+        Column("shots_total", "INTEGER"),
 
-        Column("key_passes","INTEGER"),
+        Column("shots_on_target", "INTEGER"),
 
-        Column("tackles","INTEGER"),
+        Column("goals", "INTEGER"),
 
-        Column("interceptions","INTEGER"),
+        Column("assists", "INTEGER"),
 
-        Column("yellow_cards","INTEGER"),
+        Column("goals_conceded", "INTEGER"),
 
-        Column("red_cards","INTEGER"),
+        Column("goalkeeper_saves", "INTEGER"),
 
-        Column("created_at","TIMESTAMP",False,default="CURRENT_TIMESTAMP")
+        Column("passes_total", "INTEGER"),
+
+        Column("passes_key", "INTEGER"),
+
+        Column("passes_accuracy", "INTEGER"),
+
+        Column("tackles", "INTEGER"),
+
+        Column("blocks", "INTEGER"),
+
+        Column("interceptions", "INTEGER"),
+
+        Column("duels_total", "INTEGER"),
+
+        Column("duels_won", "INTEGER"),
+
+        Column("dribbles_attempts", "INTEGER"),
+
+        Column("dribbles_success", "INTEGER"),
+
+        Column("dribbled_past", "INTEGER"),
+
+        Column("fouls_drawn", "INTEGER"),
+
+        Column("fouls_committed", "INTEGER"),
+
+        Column("yellow_cards", "INTEGER"),
+
+        Column("red_cards", "INTEGER"),
+
+        Column("penalties_won", "INTEGER"),
+
+        Column("penalties_committed", "INTEGER"),
+
+        Column("penalties_scored", "INTEGER"),
+
+        Column("penalties_missed", "INTEGER"),
+
+        Column("penalties_saved", "INTEGER"),
 
     ],
 
     foreign_keys=[
 
-        ForeignKey("fixture_id","fact_fixture","fixture_id"),
+        ForeignKey(
+            "fixture_id",
+            "fact_fixture",
+            "fixture_id"
+        ),
 
-        ForeignKey("player_id","dim_player","player_id"),
+        ForeignKey(
+            "team_id",
+            "dim_team",
+            "team_id"
+        ),
 
-        ForeignKey("team_id","dim_team","team_id")
+        ForeignKey(
+            "player_id",
+            "dim_player",
+            "player_id"
+        )
 
     ],
 
     indexes=[
 
-        Index("idx_player_fixture",["fixture_id"]),
+        Index(
+            "idx_player_fixture",
+            ["fixture_id"]
+        ),
 
-        Index("idx_player",["player_id"])
+        Index(
+            "idx_player_team",
+            ["team_id"]
+        ),
+
+        Index(
+            "idx_player",
+            ["player_id"]
+        )
 
     ]
 

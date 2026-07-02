@@ -156,9 +156,16 @@ elif args.command == "download-statistics":
 
     DownloadStatisticsPipeline().run()
 
+elif args.command == "download-players":
 
+    from pipeline.download_players import (
+        DownloadPlayersPipeline
+    )
+
+    DownloadPlayersPipeline().run()
 
 parser.add_argument(
     "--fixture",
     type=int
 )
+

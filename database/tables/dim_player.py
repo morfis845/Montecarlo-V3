@@ -8,41 +8,31 @@ TABLE = TableDefinition(
 
     columns=[
 
-        Column("player_id","INTEGER",False,True),
+        Column("player_id", "INTEGER", primary_key=True, nullable=False),
 
-        Column("team_id","INTEGER",False),
+        Column("player_name", "VARCHAR", nullable=False),
 
-        Column("player_name","VARCHAR",False),
+        Column("firstname", "VARCHAR"),
 
-        Column("firstname","VARCHAR"),
+        Column("lastname", "VARCHAR"),
 
-        Column("lastname","VARCHAR"),
+        Column("birth_date", "DATE"),
 
-        Column("birth_date","DATE"),
+        Column("nationality", "VARCHAR"),
 
-        Column("nationality","VARCHAR"),
+        Column("height", "INTEGER"),
 
-        Column("height","INTEGER"),
+        Column("weight", "INTEGER"),
 
-        Column("weight","INTEGER"),
+        Column("position", "VARCHAR"),
 
-        Column("position","VARCHAR"),
-
-        Column("photo","VARCHAR")
-
-    ],
-
-    foreign_keys=[
-
-        ForeignKey("team_id","dim_team","team_id")
+        Column("photo", "VARCHAR")
 
     ],
 
     indexes=[
 
-        Index("idx_player_team",["team_id"]),
-
-        Index("idx_player_name",["player_name"])
+        Index("idx_player_name", ["player_name"])
 
     ]
 

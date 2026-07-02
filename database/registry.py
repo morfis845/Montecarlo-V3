@@ -12,7 +12,8 @@ from database.tables import (
     fact_lineup,
     fact_injuries,
     fact_odds,
-    system_metadata
+    system_metadata,
+    fact_player_match
 )
 
 TABLES = [
